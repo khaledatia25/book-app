@@ -1,0 +1,39 @@
+User Management Module
+-> Allows to manage users groups, and roles defined
+-> user 
+-> group
+-> roles
+-> user_type
+
+-----------------------------
+Auth
+session based stateful
+token based stateless
+
+for token based we use JSON web token JWT
+
+JWT
+- Open standard that defines a selft-contained way of securely transmitting information
+  between parties as a JSON object
+- This information can be verified and trusted because it is digitally signed
+
+Adv
+    - Stateless -> no additional storage
+    - Can be easily shared among services
+Consitis of three parts seperated by dots (.)
+    * Header
+    * Payload
+    * Signature
+
+#Header
+ - Type of token, which is JWT
+ - Singning algorithm -> (HMAC, SHA256, RSA)
+#Payload
+Contains the claim. Claims are statement about an entity and additional data
+    Types of Claims
+        - Registered: predefined claims which are not mandatory but recommended (issuser, experation time)
+        - Public: defined in the IANA JSON Web Token Registry
+        - Private: these are the custom claims created to share information
+#Signature
+    To create the signature part you have t take the encoded header, the encoded payload,
+    a secret, the algorithm specified in the header
